@@ -1,0 +1,44 @@
+{% extends "default.html" %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+{% endblock %}
+{% block content %}
+<div class="about-section">
+  <h2 id="about_us">About Us</h2>
+  <p>Resumate was designed and coded by two first-year university students for a hackathon. This project was completed over the span of one weekend!</p>
+</div>
+
+<body>
+<h2 class='our_team'>Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img class="image" src="{{ url_for('static', filename='images/harold.png') }}" style="width:100%">
+      <div class="container">
+        <h2 class="header2">Harold Yan</h2>
+        <p class="title">Front-end</p>
+        <p class="paragraph">1st Year Business and Computer Science (BUCS) student at UBC. </p>
+        <p class="paragraph">Designed a responsive website using HTML, Javascript, and CSS. Animated powerpoint presentation.</p>
+        <p class="paragraph">hyan16@student.ubc.ca</p>
+        <p><button class='contact_button' onclick="window.location.href='https://www.linkedin.com/in/harold-yan-a0b0141a8/';">Harold's LinkedIn</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img class="image" src="{{ url_for('static', filename='images/marshall.jpg') }}" style="width:100%">
+      <div class="container">
+        <h2 class="header2">Marshall Xie</h2>
+        <p class="title">Back-end</p>
+        <p class="paragraph">1st Year Business and Computer Science (BUCS) student at UBC. </p>
+        <p class="paragraph">Built the backend using python, flask, and OpenAI API. Templated HTML with Jinja2.</p>
+        <p class="paragraph">mxie06@student.ubc.ca</p>
+        <p><button class='contact_button' onclick="window.location.href='https://www.linkedin.com/in/marshallxie/';">Marshall's LinkedIn</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

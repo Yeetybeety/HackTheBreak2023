@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block style %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    {% endblock %}
+</head>
+<body>
+ {% block header %}
+  <header>
+    <div class='header_nav'>
+    <h1>Resumate</h1>
+      <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/demo">Demo</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+ {% endblock %}
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

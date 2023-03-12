@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+{% block head %}
+  <head>
+        {% block title %}
+    <title>Resumate</title>
+        {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+{% endblock %}
+
+<body>
+ {% block header %}
+  <header>
+    <div class='header_nav'>
+    <h1>Resumate</h1>
+      <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/demo">Demo</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+ {% endblock %}
+
+
+  <main>
+    {% block content %}
+    <section class="hero">
+      <h2>Your path to success starts with a strong resume.</h2>
+      <p>Resumate assesses your resume's strengths and weaknesses, providing you with detailed feedback on how to improve structure, grammar, and content. Upload your resume and receive a report in seconds! </p>
+      <form class="upload_form" action="/upload" method="post" enctype="multipart/form-data">
+            <label for="resume_input" class="upload_label">Choose a file</label>
+            <input type="file" id="resume_input" name="resume" accept=".pdf,.doc,.docx">
+            <button type="submit" class="upload_button">Upload</button>
+      </form>
+    </section>
+    {% endblock %}
+{% block error %}
+{% endblock %}
+{% block display %}
+      <div class="card">
+      <section class="how_it_works">
+        <h2 id="how-it-works">How it works</h2>
+        <ol id="list">
+          <li class="htw"><span class="number">1</span> <strong>Upload your resume: &nbsp</strong> Upload a text (.txt) or word document (.docx)</li>
+          <li class="htw"><span class="number">2</span> <strong>Our AI scans your resume: &nbsp</strong> Please wait for the process to complete!</li>
+          <li class="htw"><span class="number">3</span> <strong>Receive a detailed report: &nbsp</strong> The AI will provide detailed and specific feedback on the strengths and weaknesses of your resume.</li>
+          <li class="htw"><span class="number">4</span> <strong>Quality Score: &nbsp</strong> You will receive a quality score that tells you how professional and effective your resume is.</li>
+        </ol>
+        <p style="text-align: left;">Get started now and take your resume to the next level!</p>
+      </section>
+    </div>
+{% endblock %}
+</main>
+ <footer>
+</footer>
+</body>
+</html>

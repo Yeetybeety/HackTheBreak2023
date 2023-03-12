@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.score {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  animation: count-up 3s ease-in-out forwards;
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+  <script>
+    const scoreElement = document.querySelector('.score');
+const finalScore = 100;
+
+const updateScore = () => {
+  let score = 0;
+
+  const intervalId = setInterval(() => {
+    if (score === finalScore) {
+      clearInterval(intervalId);
+    }
+
+    scoreElement.textContent = score;
+    score++;
+  }, 30);
+};
+
+updateScore();
+
+  </script>
+</head>
+<body>
+<div class="score-container">
+  <div class="score">0</div>
+</div>
+</body>
+</html>

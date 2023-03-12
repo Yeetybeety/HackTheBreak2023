@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block head %}
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block display %}
+    <div class="main-body">
+        <div class="card strengths">
+            <h3>Strengths</h3>
+            <ul>
+                {% for item in strengths %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card weaknesses">
+            <h3 style="text-align:left;">Weaknesses</h3>
+            <ul>
+                {% for item in weaknesses %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card">
+            <div class="score">Score: {{ score }}</div>
+            </div>
+      </div>
+{% endblock %}
